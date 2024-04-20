@@ -32,14 +32,13 @@ typedef struct HashNode
 // Function prototypes
 Chromosome *create_chromosome(int numbits);
 Chromosome **initialize_population(int numbits, int solutionPoolSize);
-// void initialize_population_data(Chromosome **population, int **tempPool, int numbits, int solutionPoolSize);
 unsigned int hashFunction(char *str);
 void insertOrUpdate(char *key, HashNode **hashTable);
 void free_population(Chromosome **population, int solutionPoolSize);
 void freeHashTable(HashNode **hashTable);
-double evaluate(Chromosome *chrom, int numbits, float **W);                                   // Ensure W is defined correctly or passed appropriately
-int *count(Chromosome **population, HashNode **hashTable, int numbits, int solutionPoolSize); //, int occur[]);
-void selection(Chromosome **population, int numbits, int solutionPoolSize, float **W);        // Ensure W is defined or passed correctly
+double evaluate(Chromosome *chrom, int numbits, float **W);
+int *count(Chromosome **population, HashNode **hashTable, int numbits, int solutionPoolSize);
+void selection(Chromosome **population, int numbits, int solutionPoolSize, float **W);
 void crossover(Chromosome **population, int numbits, int solutionPoolSize);
 void mutation(Chromosome **population, int numbits, int solutionPoolSize);
 void runGeneticAlgor(Chromosome **population, int numbits, int solutionPoolSize, float **W);
